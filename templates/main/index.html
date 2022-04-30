@@ -1,10 +1,28 @@
 {% extends '../base.html' %}
 
-<!-- {% block header %}
-<h1>{{ object.title }}</h1>
-{% endblock %}
-
 {% block content %}
-<div>{{ object.date }}</div>
-<div>{{ object.content }}</div>
-{% endblock content %} -->
+<div class="d-flex justify-content-around">
+    <div>
+        <section>
+            <h1>BLOG</h1>
+            {% for blog in blog_list %}
+            <div>{{ blog.date }}</div>
+            <div>
+                <a href="{% url 'blog' blog.pk %}">{{ blog.title }}</a>
+            </div>
+            {% endfor %}
+        </section>
+    </div>
+    <div>
+        <section>
+            <h1>LINK</h1>
+            <div class="SNS">
+                <a href="https://twitter.com/saku3449?ref_src=twsrc%5Etfw" class="twitter-follow-button"
+                    data-show-count="false">Follow @saku3449</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><br>
+                <a target="black" href="https://github.com/Saku3449" class="fab fa-github">Saku3449</a>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock content %}

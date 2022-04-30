@@ -1,6 +1,23 @@
+from pyexpat import model
+from re import template
 from django.shortcuts import render
 from django.views.generic import *
+from .models import *
 
 
-class MainView(TemplateView):
+class BaseView(TemplateView):
+    template_name = "base.html"
+
+
+class MainView(ListView):
     template_name = "main/index.html"
+    model = Blog
+
+
+class BioView(TemplateView):
+    template_name = "main/bio.html"
+
+
+class BlogView(DetailView):
+    template_name = "main/blog.html"
+    model = Blog
