@@ -12,6 +12,7 @@ class BaseView(TemplateView):
 class MainView(ListView):
     template_name = "main/index.html"
     model = Blog
+    paginate_by = 5
 
 
 class BioView(TemplateView):
@@ -21,3 +22,7 @@ class BioView(TemplateView):
 class BlogView(DetailView):
     template_name = "main/blog.html"
     model = Blog
+
+
+class ProdView(TemplateView):
+    template_name = "main/prod.html"
