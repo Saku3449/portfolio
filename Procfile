@@ -1,1 +1,1 @@
-web:gunicorn portfolio.wisgi --log-file -
+web: vendor/bin/heroku-php-apache2 public/
