@@ -12,6 +12,7 @@ class BaseView(TemplateView):
 class MainView(ListView):
     template_name = "main/index.html"
     model = Blog
+    ordering = ['-date']
     paginate_by = 5
 
 
